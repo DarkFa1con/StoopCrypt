@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StoopCrypt - Encryption Tool by Muhammad Hassnain</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Custom Title Bar -->
+    <div class="title-bar">
+        <div class="title-bar-drag">
+            <i class="fas fa-shield-halored"></i>
+            <span>StoopCrypt - by Muhammad Hassnain</span>
+        </div>
+        <div class="window-controls">
+            <button class="window-control" id="minimize-btn">
+                <i class="fas fa-minus"></i>
+            </button>
+            <button class="window-control" id="maximize-btn">
+                <i class="far fa-square"></i>
+            </button>
+            <button class="window-control close" id="close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header with Animation -->
+        <div class="header animate__animated animate__fadeInDown">
+            <div class="logo-container">
+                <div class="pulse-ring"></div>
+                <i class="fas fa-lock main-lock"></i>
+            </div>
+            <h1 class="glitch-text" data-text="StoopCrypt">StoopCrypt</h1>
+            <p class="subtitle">Secure Encryption Tool by <span class="highlight">Muhammad Hassnain</span></p>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="tabs animate__animated animate__fadeIn">
+            <button class="tab-btn active" data-tab="file">
+                <i class="fas fa-file"></i> File
+            </button>
+            <button class="tab-btn" data-tab="text">
+                <i class="fas fa-font"></i> Text
+            </button>
+        </div>
+
+        <!-- File Tab Content -->
+        <div id="file-tab" class="tab-content active">
+            <div class="mode-selector">
+                <button class="mode-btn active" data-mode="encrypt">
+                    <i class="fas fa-lock"></i> Encrypt
+                </button>
+                <button class="mode-btn" data-mode="decrypt">
+                    <i class="fas fa-unlock-alt"></i> Decrypt
+                </button>
+            </div>
+
+            <div class="file-drop-area" id="file-drop">
+                <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                <p>Drag & drop file here or <span class="browse-link">browse</span></p>
+                <p class="file-path" id="file-path"></p>
+                <input type="file" id="file-input" hidden>
+            </div>
+
+            <div class="password-container">
+                <i class="fas fa-key"></i>
+                <input type="password" id="file-password" placeholder="Enter password">
+                <button class="toggle-password" type="button">
+                    <i class="far fa-eye"></i>
+                </button>
+            </div>
+
+            <div class="progress-container" id="progress-container" style="display: none;">
+                <div class="progress-bar" id="progress-bar"></div>
+                <div class="progress-text" id="progress-text">0%</div>
+            </div>
+
+            <button class="action-btn" id="file-action-btn">
+                <i class="fas fa-lock"></i>
+                <span>Encrypt File</span>
+                <div class="btn-shine"></div>
+            </button>
+        </div>
+
+        <!-- Text Tab Content -->
+        <div id="text-tab" class="tab-content">
+            <div class="mode-selector">
+                <button class="mode-btn active" data-mode="encrypt">
+                    <i class="fas fa-lock"></i> Encrypt
+                </button>
+                <button class="mode-btn" data-mode="decrypt">
+                    <i class="fas fa-unlock-alt"></i> Decrypt
+                </button>
+            </div>
+
+            <div class="text-area-container">
+                <textarea id="text-input" placeholder="Enter your text here..." rows="5"></textarea>
+            </div>
+
+            <div class="password-container">
+                <i class="fas fa-key"></i>
+                <input type="password" id="text-password" placeholder="Enter password">
+                <button class="toggle-password" type="button">
+                    <i class="far fa-eye"></i>
+                </button>
+            </div>
+
+            <div class="output-area" id="output-area" style="display: none;">
+                <label>Output:</label>
+                <textarea id="text-output" rows="3" readonly></textarea>
+                <button class="copy-btn" id="copy-btn">
+                    <i class="far fa-copy"></i> Copy
+                </button>
+            </div>
+
+            <button class="action-btn" id="text-action-btn">
+                <i class="fas fa-lock"></i>
+                <span>Encrypt Text</span>
+                <div class="btn-shine"></div>
+            </button>
+        </div>
+    </div>
+
+    <!-- Particles Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Three.js for 3D visualization -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="renderer.js"></script>
+</body>
+</html>
